@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./VueJS/vue.js"></script>
+    <title>Document</title>
+    <style>
+        .vermelho {
+            color: red;
+        }
+        .azul {
+            background: white;
+        }
+        .verde {
+            background: green;
+        }
+    </style>
+</head>
+<body>
+     <div id="app">
+        {{ text }}<br>
+        Valor: {{ valor }}<br>
+        Logado: {{ logado }}<br>
+        Hobbie: {{ hobbies[0] }}<br>
+        Perfil: {{ perfil.site }}, {{ perfil.cursos[0].nome }}<br>
+        {{ somar() }}
+        {{ subtrair() }}
+        {{ multiplicar() }}
+        {{ dividir() }}
+        {{ numeroAleatorio() }}
+        {{ getDataItens() }}
+        <a :href="site">site</a>
+        <p :class="cor" class="teste">entendendo a diretiva v-bind</p> <!--o vue no caso da propeidade class ele consegue fazer o encadeamento-->
+        <input v-bind:type="batata" v-bind:placeholder="instruçãoDePreenchimento" :value="valor" :class="teste ? 'verde' : estilo" @keyup="imprimirTexto('Enviando parametro', 5, xyz)">
+        <input type="checkbox" v-bind:checked="check">
+        <button @click="mensagemAlerta()">Botao</button>
+     </div>
+
+     <script src="./script.js"></script>
+</body>
+</html>
