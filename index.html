@@ -35,7 +35,7 @@
         <p :class="cor" class="teste">entendendo a diretiva v-bind</p> <!--o vue no caso da propeidade class ele consegue fazer o encadeamento-->
         <input v-bind:type="batata" v-bind:placeholder="instruçãoDePreenchimento" :value="valor" :class="teste ? 'verde' : estilo" @keyup="imprimirTexto('Enviando parametro', 5, xyz)">
         <input type="checkbox" v-bind:checked="check">
-        <button @click="mensagemAlerta()">Botao</button>
+        <button @click="mensagemAlerta($event)">Botao</button>
      </div>
 
      <script src="./script.js"></script>

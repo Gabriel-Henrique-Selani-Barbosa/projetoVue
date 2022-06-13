@@ -59,7 +59,8 @@ const vm = new Vue({//vm = viewModel
             console.log(n)
             console.log(s)
         },
-        mensagemAlerta() {
+        mensagemAlerta(event) {
+            console.log(event)
             alert('ACORDA PEDRINGO QUE HOJE TEM CAMPEONATO')
         }
     }
