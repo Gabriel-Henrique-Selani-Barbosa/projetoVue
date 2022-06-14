@@ -63,6 +63,19 @@
         Cliques: {{ cliques }}
         <input type="text" @keyup.x="capturandoTeclas($event)">
         Tecla: {{ teclas }}
+
+        <!--v-if simples-->
+        <button @click="exibirSaldo = !exibirSaldo">
+            <span v-if="!exibirSaldo">Exibir Saldo</span>
+            <span v-if="exibirSaldo">Ocultar Saldo</span>
+        </button>
+        <p>Saldo <span v-if="exibirSaldo"> R$ {{ saldo }}</span></p>
+
+        <!--v-if e v-else-->
+        Idade: <input type="text" id="inputIdade" @blur="setIdade()">
+        <p v-if="idade < 18">menor de idade</p>
+        <p v-else-if="idade < 20">jovem</p>
+        <p v-else>Maior de idade</p>
      </div>
 
      <script src="./script.js"></script>

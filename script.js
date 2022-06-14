@@ -31,6 +31,9 @@ const vm = new Vue({//vm = viewModel
         posicaoY: 0,
         cliques: 0,
         teclas: '',
+        saldo: 4570.17,
+        exibirSaldo: true,
+        idade: 0,
     },
     methods: {
         somar: function somar() { //syntax convencional
@@ -78,6 +81,9 @@ const vm = new Vue({//vm = viewModel
         },
         capturandoTeclas(event) {
             this.teclas = event.key
+        },
+        setIdade() {
+            this.idade = inputIdade.value
         }
     }
 })
