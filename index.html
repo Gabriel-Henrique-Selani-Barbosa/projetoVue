@@ -8,13 +8,28 @@
     <title>Document</title>
     <style>
         .vermelho {
-            color: red;
+            background: red;
+        }
+        .rosa {
+            background: pink;
         }
         .azul {
             background: white;
         }
         .verde {
             background: green;
+        }
+        .borda {
+            border: 1px solid;
+        }
+        .div-principal {
+            width: 200px;
+            height: 200px;
+        }
+        .div-comum {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
         }
     </style>
 </head>
@@ -31,11 +46,23 @@
         {{ dividir() }}
         {{ numeroAleatorio() }}
         {{ getDataItens() }}
-        <a :href="site">site</a>
+        <a :href="site" @click.prevent.once>site</a>
         <p :class="cor" class="teste">entendendo a diretiva v-bind</p> <!--o vue no caso da propeidade class ele consegue fazer o encadeamento-->
-        <input v-bind:type="batata" v-bind:placeholder="instruçãoDePreenchimento" :value="valor" :class="teste ? 'verde' : estilo" @keyup="imprimirTexto('Enviando parametro', 5, xyz)">
         <input type="checkbox" v-bind:checked="check">
         <button @click="mensagemAlerta($event)">Botao</button>
+        <div class="borda div-principal" :class="cor">
+            Cor: {{ cor }}
+            Posição X do mouse: {{ posicaoX }}
+            Posição Y do mouse: {{ posicaoY }}
+        </div>
+        <hr>
+        <div class="borda div-comum" @click="mudarCor('verde')"></div>
+        <div class="borda div-comum" @mouseover="mudarCor('vermelho')" @mouseout="mudarCor('rosa')"></div>
+        <div class="borda div-comum" @mousemove="coordenadas($event)"></div>
+        <button @click.once="executarUmaVez()">Botao</button>
+        Cliques: {{ cliques }}
+        <input type="text" @keyup.x="capturandoTeclas($event)">
+        Tecla: {{ teclas }}
      </div>
 
      <script src="./script.js"></script>

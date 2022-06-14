@@ -20,14 +20,17 @@ const vm = new Vue({//vm = viewModel
             ]
         },
         site: 'youtube.com.br',
-        cor: 'vermelho',
         instrucaoDePreenchimento: 'Placeholder - Diretiva v-bind',
         batata: 'text',
         valor: "vue é daora",
         check: true,
         estilo: 'azul',
-        teste: false,
         xyz: true,
+        cor: 'branco',
+        posicaoX: 0,
+        posicaoY: 0,
+        cliques: 0,
+        teclas: '',
     },
     methods: {
         somar: function somar() { //syntax convencional
@@ -62,6 +65,19 @@ const vm = new Vue({//vm = viewModel
         mensagemAlerta(event) {
             console.log(event)
             alert('ACORDA PEDRINGO QUE HOJE TEM CAMPEONATO')
+        },
+        mudarCor(c) {
+            this.cor = c
+        },
+        coordenadas(e) {
+            this.posicaoX = e.clientX
+            this.posicaoY = e.clientY
+        },
+        executarUmaVez() {
+            this.cliques++
+        },
+        capturandoTeclas(event) {
+            this.teclas = event.key
         }
     }
 })
